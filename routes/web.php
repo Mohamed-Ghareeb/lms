@@ -3,9 +3,7 @@
 use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn () => view('welcome'));
 
 // Languages Route
 Route::controller(LanguageController::class)->prefix('language')->group(function () {

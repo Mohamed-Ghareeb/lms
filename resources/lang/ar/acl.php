@@ -3,11 +3,11 @@
 return [
     'dashboard' => 'لوحة التحكم',
 
-    'users' => 'المستخدمين',
-    'user' => 'المستخدم',
+    'users'      => 'المستخدمين',
+    'user'       => 'المستخدم',
     'user_types' => [
-        'student' => 'طالب',
+        'student'    => 'طالب',
         'instructor' => 'مدرس',
-        'admin' => 'مشرف',
+        'admin'      => 'مشرف',
     ],
 ];

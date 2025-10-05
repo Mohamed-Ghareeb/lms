@@ -3,10 +3,10 @@
 namespace App\Providers;
 
 use App\Utils\MultiLanguageManager;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Event;
 use BezhanSalleh\FilamentLanguageSwitch\Events\LocaleChanged;
 use BezhanSalleh\FilamentLanguageSwitch\LanguageSwitch;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,7 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         config(['app.fallback_locale' => 'en']);
-
 
         LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
             $switch

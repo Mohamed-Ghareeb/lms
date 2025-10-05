@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'users' => 'Users',
-    'user' => 'User',
+    'users'      => 'Users',
+    'user'       => 'User',
     'user_types' => [
-        'student' => 'Student',
+        'student'    => 'Student',
         'instructor' => 'Instructor',
-        'admin' => 'Admin',
+        'admin'      => 'Admin',
     ],
 ];

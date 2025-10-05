@@ -10,9 +10,8 @@ class MultiLanguageManager
      * If a valid language is provided, it saves the language preference.
      * Otherwise, it defaults to saving the application's fallback locale.
      *
-     * @param string|null $language The language code to set. If null or invalid, the fallback locale will be used.
+     * @param  string|null  $language  The language code to set. If null or invalid, the fallback locale will be used.
      */
-
     public static function changeLanguage($language)
     {
         if ((bool) $language) {
@@ -29,10 +28,9 @@ class MultiLanguageManager
      * If the user is not authenticated but a session language exists, the session language is updated.
      * Otherwise, the language is saved as a new session preference.
      *
-     * @param string $language The language code to save.
+     * @param  string  $language  The language code to save.
      * @return string The saved language code.
      */
-
     protected static function saveLanguage($language)
     {
         if (auth()->check()) {
@@ -51,7 +49,7 @@ class MultiLanguageManager
      *
      * Updates the user's `lang` attribute with the provided language code.
      *
-     * @param string $language The language code to save.
+     * @param  string  $language  The language code to save.
      */
     protected static function saveLanguageForUser($language)
     {
@@ -64,8 +62,8 @@ class MultiLanguageManager
      * If the session preference already exists, it will be forgotten before being set.
      * Otherwise, the language is saved as a new session preference.
      *
-     * @param string $language The language code to save.
-     * @param bool $exists Whether the session preference already exists.
+     * @param  string  $language  The language code to save.
+     * @param  bool  $exists  Whether the session preference already exists.
      */
     protected static function saveLanguageInSession($language, $exists = false)
     {
@@ -85,7 +83,6 @@ class MultiLanguageManager
      *
      * @return string The current language code.
      */
-
     public static function getLanguage()
     {
         if (auth()->check()) {
@@ -105,7 +102,6 @@ class MultiLanguageManager
      *
      * @return string The language code from the user's profile or the fallback locale.
      */
-
     protected static function getLanguageFromUser()
     {
         $lang = auth()->user()->lang;
@@ -121,7 +117,6 @@ class MultiLanguageManager
      *
      * @return string|null The language code from the session or null if not set.
      */
-
     protected static function getLanguageFromSession()
     {
         return session()->get('local');

@@ -4,7 +4,6 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-use App\Enums\UserTypeEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -48,23 +47,7 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-            'type' => UserTypeEnum::class,
+            'password'          => 'hashed',
         ];
-    }
-    
-    public function isAdmin(): bool
-    {
-        return $this->type === UserTypeEnum::Admin;
-    }
-
-    public function isInstructor(): bool
-    {
-        return $this->type === UserTypeEnum::Instructor;
-    }
-
-    public function isStudent(): bool
-    {
-        return $this->type === UserTypeEnum::Student;
     }
 }
